@@ -1,0 +1,68 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using System.Data;
+@model WebApplication2.Dto.File
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<form class="row g-3" asp-action="Index" asp-controller="Home" formmethod="post" enctype="multipart/form-data">
+    <div class="mb-3 col-auto">
+        <label for="formFile" class="form-label">Cargar archivo y procesar</label>
+        <input class="form-control" type="file" name="files">
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Cargar archivo</button>
+    </div>
+</form>
+
+<div class="card" style="width: 18rem;">
+    @if (Model != null)
+    {
+        <div class="card-body flex-column">
+            <h5 class="card-title">Encabezado</h5>
+            <h6 class="card-subtitle mb-2 text-muted ">Fecha emisión</h6>
+            <p class="card-text">@Model.encabezado.Fecha</p>
+
+            <h6 class="card-subtitle mb-2 text-muted">Codigo Centro</h6>
+            <p class="card-text">@Model.encabezado.CodigoCebtro</p>
+
+            <h6 class="card-subtitle mb-2 text-muted">Codigo Plantel</h6>
+            <p class="card-text">@Model.encabezado.CodigoPlantel</p>
+
+        </div>
+    }
+</div>
+
+<h1>Detalle</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th scope="col">Num. de Documento</th>
+            <th scope="col">RNE</th>
+            <th scope="col">Calificaciones</th>
+            <th scope="col">Tipo de Sangre</th>
+            <th scope="col">Discapacidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var drr in Model.detalles)
+            {
+                <tr>
+
+                    <td>@drr.NumeroDeDocumento</td>
+                    <td>@drr.Rne</td>
+                    <td>@drr.Municipio</td>
+                    <td>@drr.Calificaiones</td>
+                    <td>@drr.Tipodesangre</td>
+                    <td>@drr.Discapacidad</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
