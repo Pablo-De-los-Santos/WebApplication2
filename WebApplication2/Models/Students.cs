@@ -8,7 +8,7 @@ namespace WebApplication2.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentId { get; set; }
-        public long? StudentCode { get; set; }
+        public string? StudentCode { get; set; }
         public string Rne { get; set; }
         public string State { get; set; }
         public string Period { get; set; }
@@ -17,7 +17,7 @@ namespace WebApplication2.Models
         public string BloodType { get; set; }
         public string ConditionDescription { get; set; }
 
-        public int SchoolId { get; set; }
+        public int? SchoolId { get; set; }
 
         [ForeignKey("SchoolId")]
         public virtual Schools School { get; set; }

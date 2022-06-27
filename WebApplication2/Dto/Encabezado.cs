@@ -8,7 +8,7 @@ namespace WebApplication2.Dto
     public class Encabezado
     {
        
-        public DateTime Fecha { get; set; }
+        public DateTime? Fecha { get; set; }
       
         public string CodigoCebtro { get; set; }
 

@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace WebApplication2.Dto
 {
-    public class File
+    public class Calificaciones
     {
-  
 
-        public Encabezado encabezado;
-        public List<Detalle> detalles;
-
+        public string Course { get; set; }
+        public int? Score { get; set; }
     }
 }

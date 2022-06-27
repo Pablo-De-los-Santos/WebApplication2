@@ -42,6 +42,10 @@
 
             <th scope="col">Num. de Documento</th>
             <th scope="col">RNE</th>
+            <th scope="col">Nivel</th>
+            <th scope="col">Grado</th>
+            <th scope="col">Periodo</th>
+            <th scope="col">Municipio</th>
             <th scope="col">Calificaciones</th>
             <th scope="col">Tipo de Sangre</th>
             <th scope="col">Discapacidad</th>
@@ -56,8 +60,19 @@
 
                     <td>@drr.NumeroDeDocumento</td>
                     <td>@drr.Rne</td>
+                    <td>@drr.Nivel</td>
+                    <td>@drr.Grado</td>
+                    <td>@drr.Periodo</td>
                     <td>@drr.Municipio</td>
-                    <td>@drr.Calificaiones</td>
+                    <td>
+                        @foreach (var dr in drr.Calificaiones)
+                        {
+                            <p>@dr.Course<span>:</span>@dr.Score.ToString()</p>
+
+
+                        }
+
+                    </td>
                     <td>@drr.Tipodesangre</td>
                     <td>@drr.Discapacidad</td>
                 </tr>
