@@ -22,7 +22,7 @@
         <div class="card-body flex-column">
             <h5 class="card-title">Encabezado</h5>
             <h6 class="card-subtitle mb-2 text-muted ">Fecha emisión</h6>
-            <p class="card-text">@Model.encabezado.Fecha</p>
+            <p class="card-text">@Model.encabezado.Fecha?.ToString("dd/MM/yyyy")</p>
 
             <h6 class="card-subtitle mb-2 text-muted">Codigo Centro</h6>
             <p class="card-text">@Model.encabezado.CodigoCebtro</p>
