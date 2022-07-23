@@ -162,12 +162,14 @@ namespace WebApplication2.Controllers
 
                             foreach (var Calificaciones in File.InformacionAcademica.Split(','))
                             {
+                                if (Calificaciones != "") {
                                 string[] Calificaion = Calificaciones.Split(':');
                                 Notas.Add(new Dto.Calificaciones
                                 {
                                     Course = Calificaion[0],
                                     Score = int.Parse(Calificaion[1])
                                 });
+                                }
                             }
 
                             Datos.detalles.Add(new Dto.Detalle
