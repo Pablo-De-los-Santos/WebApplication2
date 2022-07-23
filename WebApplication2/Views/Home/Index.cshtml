@@ -8,12 +8,17 @@
 
 <form class="row g-3" asp-action="Index" asp-controller="Home" formmethod="post" enctype="multipart/form-data">
     <div class="mb-3 col-auto">
-        <label for="formFile" class="form-label">Cargar archivo y procesar</label>
+        <label for="formFile" class="form-label">Cargar archivo</label>
         <input class="form-control" type="file" name="files">
     </div>
-    <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3">Cargar archivo</button>
+    <div>
+        <label for="formFile" class="form-label">URL de Origen de Data</label>
+        <input type="text" class="form-control" name="url" placeholder="URL de origen">
     </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Procesar</button>
+    </div>
+
 </form>
 
 <div class="card" style="width: 18rem;">
